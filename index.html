@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Mitti-AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E");
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 40px rgba(34, 197, 94, 0.5));
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #22c55e, #10b981, #14f195);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.25rem, 3.5vw, 2rem);
+            font-weight: 300;
+            color: #a1a1aa;
+            margin-bottom: 10px;
+        }
+
+        .date-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #22c55e;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: #d4d4d8;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+
+        .intro strong {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(24, 24, 27, 0.8), rgba(39, 39, 42, 0.6));
+            border: 1px solid rgba(63, 63, 70, 0.5);
+            border-radius: 20px;
+            padding: 35px 30px;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #22c55e, #10b981);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(34, 197, 94, 0.5);
+            box-shadow: 0 20px 60px rgba(34, 197, 94, 0.15);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #22c55e, #14f195);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .card h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card li {
+            padding: 10px 0;
+            color: #d4d4d8;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+
+        .card li::before {
+            content: '→';
+            color: #22c55e;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .highlight-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.1));
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            text-align: center;
+            padding: 50px;
+            border-radius: 20px;
+        }
+
+        .highlight-card h3 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 15px;
+            border-radius: 15px;
+        }
+
+        .highlight-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            filter: drop-shadow(0 0 20px rgba(34, 197, 94, 0.6));
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.05));
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-section h2 {
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: rgba(24, 24, 27, 0.6);
+            border: 1px solid rgba(63, 63, 70, 0.5);
+            padding: 18px 25px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 200px;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(34, 197, 94, 0.6);
+            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+        }
+
+        .contact-item strong {
+            color: #22c55e;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 8px;
+        }
+
+        .contact-item span {
+            font-size: 1rem;
+            color: #d4d4d8;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 20px 40px;
+            color: #71717a;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(63, 63, 70, 0.3);
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px 40px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 30px 25px;
+            }
+
+            .contact-section {
+                padding: 40px 25px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+    
+    <div class="container">
+        <div class="hero">
+            <div class="logo">🌾</div>
+            <h1>Privacy Policy</h1>
+            <h2>Mitti-AI</h2>
+            <div class="date-badge">Effective Date: 25-09-2025</div>
+        </div>
+
+        <p class="intro">
+            At <strong>Mitti-AI</strong>, we value your trust. This Privacy Policy explains how we collect, use, and protect your personal information when you use our app, device, or website.
+        </p>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-number">01</div>
+                <h3>Information We Collect</h3>
+                <ul>
+                    <li><strong>Personal details:</strong> Name, email, phone number (when you sign up)</li>
+                    <li><strong>Farm details:</strong> Soil data, crop type, location</li>
+                    <li><strong>Device data:</strong> Usage logs, app preferences</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-number">02</div>
+                <h3>How We Use Your Data</h3>
+                <ul>
+                    <li>To provide accurate <strong>soil analysis and crop suggestions</strong></li>
+                    <li>To improve our AI system and app experience</li>
+                    <li>To send updates, alerts, or recommendations</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-number">03</div>
+                <h3>Data Sharing</h3>
+                <ul>
+                    <li>We <strong>never sell your data</strong></li>
+                    <li>We may share limited data with service providers (e.g., cloud hosting, analytics tools) under strict privacy agreements</li>
+                </ul>
+            </div>
+
+            <div class="highlight-card">
+                <div class="highlight-icon">🔒</div>
+                <h3>Your data is safe with us</h3>
+                <p style="color: #d4d4d8; font-size: 1.1rem;">We use industry-leading security measures to protect your information</p>
+            </div>
+
+            <div class="card">
+                <div class="card-number">04</div>
+                <h3>Data Security</h3>
+                <ul>
+                    <li>We use encryption and secure servers</li>
+                    <li>Only authorized team members can access your information</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-number">05</div>
+                <h3>Your Rights</h3>
+                <ul>
+                    <li>Access, correct, or delete your data anytime</li>
+                    <li>Opt out of emails/notifications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>Email</strong>
+                        <span>saathiaiinnovation@gamil.com</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <strong>Phone</strong>
+                        <span>+91 72050-95602</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Mitti-AI • All rights reserved • Growing together with farmers</p>
+    </div>
+</body>
+</html>
