@@ -15,100 +15,58 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background: #f0fdf4;
             min-height: 100vh;
-            color: #333;
-            overflow-x: hidden;
+            color: #374151;
             position: relative;
         }
 
-        /* Animated background elements */
-        .bg-orb {
-            position: fixed;
-            border-radius: 50%;
-            opacity: 0.15;
-            z-index: 0;
+        /* Navbar Simulation */
+        .navbar {
+            background: #ffffff;
+            padding: 16px 20px;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
-        .orb-1 {
-            width: 300px;
-            height: 300px;
-            background: #fff;
-            top: -100px;
-            left: -100px;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .orb-2 {
-            width: 250px;
-            height: 250px;
-            background: #fff;
-            bottom: -50px;
-            right: -50px;
-            animation: float 10s ease-in-out infinite 2s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) translateX(0px); }
-            50% { transform: translateY(30px) translateX(20px); }
+        .navbar h1 {
+            color: #15803d;
+            font-weight: 700;
+            font-size: 1.5em;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
-            position: relative;
-            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
 
         /* Header Section */
         .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
+            background: #ffffff;
             padding: 60px 40px;
-            border-radius: 25px;
+            border-radius: 12px;
             text-align: center;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
-        }
-
-        .header-emoji {
-            font-size: 4.5em;
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .header h1 {
             font-size: 3.5em;
             font-weight: 800;
-            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #111827;
             margin-bottom: 15px;
             letter-spacing: -1px;
         }
 
         .tagline {
             font-size: 1.4em;
-            color: #764ba2;
+            color: #15803d;
             font-weight: 600;
             letter-spacing: 2px;
         }
@@ -116,64 +74,42 @@
         /* Date Badge */
         .effective-date {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #15803d;
             color: white;
             padding: 15px 35px;
             border-radius: 50px;
             margin: 30px auto;
             font-weight: 700;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
             font-size: 1.1em;
             text-align: center;
             width: fit-content;
         }
 
         .intro {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
+            background: #ffffff;
             padding: 35px 40px;
-            border-radius: 20px;
+            border-radius: 12px;
             margin-bottom: 40px;
             font-size: 1.15em;
             line-height: 1.8;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            color: #555;
+            color: #374151;
             text-align: center;
-            border-left: 6px solid #f093fb;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         /* Sections */
         .section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
+            background: #ffffff;
             padding: 40px;
             margin-bottom: 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-left: 6px solid transparent;
-            border-image: linear-gradient(135deg, #667eea, #764ba2, #f093fb) 1;
-        }
-
-        .section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .section h2 {
-            color: #764ba2;
+            color: #111827;
             font-size: 1.8em;
             margin-bottom: 25px;
             display: flex;
@@ -188,12 +124,11 @@
             justify-content: center;
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #15803d;
             color: white;
             border-radius: 50%;
             font-weight: 800;
             font-size: 1.3em;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
             flex-shrink: 0;
         }
 
@@ -204,72 +139,46 @@
         .section li {
             padding: 15px 0 15px 40px;
             position: relative;
-            color: #666;
+            color: #374151;
             font-size: 1.05em;
             line-height: 1.7;
-            transition: all 0.3s ease;
-        }
-
-        .section li:hover {
-            color: #764ba2;
-            padding-left: 50px;
         }
 
         .section li::before {
-            content: '✨';
+            content: '✓';
             position: absolute;
             left: 0;
-            font-size: 1.3em;
-            animation: twinkle 3s infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            color: #15803d;
+            font-weight: bold;
         }
 
         .highlight {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #dcfce7;
+            color: #166534;
             padding: 5px 12px;
             border-radius: 8px;
             font-weight: 700;
-            color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
             display: inline-block;
         }
 
         /* Contact Section */
         .contact-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            color: white;
+            background: #ffffff;
+            color: #374151;
             padding: 60px 40px;
-            border-radius: 25px;
+            border-radius: 12px;
             margin-top: 50px;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
-            border-radius: 50%;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #15803d;
         }
 
         .contact-section h2 {
             font-size: 2.5em;
             margin-bottom: 40px;
             font-weight: 800;
-            color: white;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-            z-index: 1;
+            color: #111827;
         }
 
         .contact-info {
@@ -277,20 +186,16 @@
             flex-direction: column;
             gap: 20px;
             align-items: center;
-            position: relative;
-            z-index: 1;
             width: 100%;
         }
 
         .contact-item {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
+            background: #f9fafb;
             padding: 25px 40px;
-            border-radius: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
             font-size: 1.15em;
             font-weight: 600;
-            transition: all 0.4s ease;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -300,14 +205,8 @@
             overflow-wrap: break-word;
         }
 
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.6);
-            transform: scale(1.05);
-        }
-
         .contact-item a {
-            color: white;
+            color: #15803d;
             text-decoration: none;
             font-weight: 700;
             word-break: break-all;
@@ -315,8 +214,15 @@
             text-align: left;
         }
 
+        .contact-item span {
+            color: #374151;
+            flex: 1;
+            text-align: left;
+        }
+
         .icon {
             font-size: 1.8em;
+            color: #15803d;
             flex-shrink: 0;
         }
 
@@ -324,14 +230,12 @@
             margin-top: 50px;
             text-align: center;
             padding: 35px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            color: #666;
+            background: #ffffff;
+            border-radius: 12px;
+            color: #374151;
             font-weight: 600;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            border-top: 4px solid transparent;
-            border-image: linear-gradient(90deg, #667eea, #764ba2, #f093fb) 1;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         /* Responsive */
@@ -342,10 +246,6 @@
 
             .header h1 {
                 font-size: 2.5em;
-            }
-
-            .header-emoji {
-                font-size: 3em;
             }
 
             .section {
@@ -363,7 +263,8 @@
                 max-width: 100%;
             }
 
-            .contact-item a {
+            .contact-item a,
+            .contact-item span {
                 text-align: center;
                 word-break: break-word;
             }
@@ -395,10 +296,6 @@
                 padding: 20px 15px;
             }
 
-            .orb-1, .orb-2 {
-                display: none;
-            }
-
             .contact-item {
                 padding: 15px 20px;
                 font-size: 1em;
@@ -411,18 +308,18 @@
     </style>
 </head>
 <body>
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
+    <div class="navbar">
+        <h1>Saathi AI</h1>
+    </div>
 
     <div class="container">
         <div class="header">
-            <div class="header-emoji">📜</div>
             <h1>Privacy Policy</h1>
             <p class="tagline">Mitti-AI • Future of Farming</p>
         </div>
 
         <div style="text-align: center;">
-            <div class="effective-date">⚡ EFFECTIVE DATE: 14-Oct-2025</div>
+            <div class="effective-date">EFFECTIVE DATE: 14-Oct-2025</div>
         </div>
 
         <p class="intro">
@@ -472,7 +369,7 @@
         </div>
 
         <div class="contact-section">
-            <h2>📞 GET IN TOUCH 📞</h2>
+            <h2>Get in Touch</h2>
             <div class="contact-info">
                 <div class="contact-item">
                     <span class="icon">📩</span>
